@@ -1,0 +1,54 @@
+/* grid */
+$outer_grid_column_width: 75px;
+$inner_grid_column_width: 50px;
+$grid_gutter_width: 25px;
+$outer_grid_column_count: 12;
+$inner_grid_column_count: 12;
+$sidebar_column_count: 3;
+
+/*
+    These are settings for the grid overlay.
+
+    Note we do a little display trickery for inner grid. The inner grid
+    doesn't have outside gutters of its own, so we reduce the number of columns
+    by one and flip-flop the gutter and column widths.
+*/
+$guide_opts: (
+    outer_column_width: $outer_grid_column_width,
+    outer_gutter_width: $grid_gutter_width,
+    outer_column_count: $outer_grid_column_count,
+
+    inner_column_start: $sidebar_column_count,
+    inner_column_width: $grid_gutter_width,
+    inner_gutter_width: $inner_grid_column_width,
+    inner_column_count: $inner_grid_column_count - 1,
+
+    outer_gutter_color: rgba(255, 165, 0, .1),
+    outer_column_color: rgba(255, 0, 0, .1),
+    inner_gutter_color: rgba(75, 0, 130, .1),
+    inner_column_color: rgba(186, 85, 211, .1)
+);
+
+/* Total grid is twelve outer columns plus thirteen gutters */
+$outer_grid_width: ($outer_grid_column_width * $outer_grid_column_count) +
+    ($grid_gutter_width * ($outer_grid_column_count + 1));
+
+/* Sidebar takes up three major columns plus an extra gutter */
+$sidebar_width: ($outer_grid_column_width * $sidebar_column_count)
+    + ($grid_gutter_width * $sidebar_column_count);
+
+/* Content area with sidebar takes up nine major columns plus surrounding gutters. */
+$content_width: ($outer_grid_column_width * ($outer_grid_column_count - $sidebar_column_count))
+    + ($grid_gutter_width * ($outer_grid_column_count - $sidebar_column_count + 1));
+
+$content_inner_width: ($content_width - ( $grid_gutter_width * 2 ));
+
+/* Half-size inner area takes up six inner columns and 5 gutters */
+$half_inner_width: ($inner_grid_column_width * ($inner_grid_column_count / 2))
+    + ($grid_gutter_width * (($inner_grid_column_count / 2) - 1));
+
+$quarter_inner_width: ($inner_grid_column_width * ($inner_grid_column_count / 4))
+    + ($grid_gutter_width * (($inner_grid_column_count / 4) - 1));
+
+$sixth_inner_width: ($inner_grid_column_width * ($inner_grid_column_count / 6))
+    + ($grid_gutter_width * (($inner_grid_column_count / 6) - 1));

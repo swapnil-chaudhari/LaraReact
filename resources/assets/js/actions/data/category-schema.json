@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "additionalProperties": false,
+    "properties": {
+        "category_title": {
+            "type": "string",
+            "required": true,
+            "minLength": 1,
+            "maxLength": 50,
+            "description": "User-generated free-text name of the category"
+        },
+        "category_description": {
+            "type": "string",
+            "required": true,
+            "minLength": 1,
+            "maxLength": 255,
+            "description": "User-generated free-text description of the category"
+        },
+        "category_icon": {
+            "type": "object",
+            "required": false,
+            "description": "User-added icon for the category"
+        }
+    },
+    "required": true,
+    "type": "object"
+}

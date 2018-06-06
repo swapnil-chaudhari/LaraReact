@@ -1,0 +1,29 @@
+/**
+ * Most of the styles below is used only for overriding global-redesign.css, which
+ * were written without common stylelint rules.
+ */
+@import "../../styles/variables.scss";
+
+/* stylelint-disable selector-class-pattern, max-nesting-depth, selector-no-type */
+.checkbox {
+    & > &-input,
+    & > label {
+        margin-bottom: 0;
+        user-select: none;
+    }
+
+    & > &-input:not(:checked),
+    & > &-input:checked {
+        & + label {
+            cursor: pointer;
+            padding-left: 22px;
+            position: relative;
+
+            &::after {
+                padding-left: 2px;
+                padding-top: 0;
+            }
+        }
+    }
+}
+/* stylelint-enable selector-class-pattern, max-nesting-depth, selector-no-type */

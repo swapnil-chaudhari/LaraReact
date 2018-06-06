@@ -1,0 +1,86 @@
+/* Relative position outer button to allow positioning inside */
+.LoadingButton {
+    position: relative;
+}
+
+/* Toggle visibility of inner elements when button is in loading state */
+.LoadingButton-loading .LoadingButton-hide {
+    visibility: hidden;
+}
+
+/* Dots container implements only showing whole dots */
+.LoadingButton-dots {
+    box-sizing: content-box;
+    display: flex;
+    flex-wrap: wrap;
+    height: 16px;
+    justify-content: center;
+    overflow: hidden;
+    padding-left: 12px;
+    padding-right: 12px;
+    visibility: hidden;
+    width: 100%;
+}
+
+/* When in loading state, show dots */
+.LoadingButton-loading .LoadingButton-dots {
+    visibility: visible;
+}
+
+/* Outer container helps with vertical alignment of dots */
+.LoadingButton-outer {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    visibility: visible;
+    width: 100%;
+}
+
+/* Pulsating dots! */
+.LoadingButton-loader-dot {
+    animation: LoadingButton-scale-dot 1.2s ease-out infinite;
+    background: #fff;
+    border-radius: 50%;
+    height: 16px;
+    margin: 0 4px;
+    opacity: .75;
+    transform: scale(.5);
+    visibility: inherit;
+    width: 16px;
+    &:nth-of-type(2) {
+        animation-delay: .2s;
+    }
+    &:nth-of-type(3) {
+        animation-delay: .3s;
+    }
+    &:nth-of-type(4) {
+        animation-delay: .4s;
+    }
+    &:nth-of-type(5) {
+        animation-delay: .5s;
+    }
+}
+
+.LoadingButton-loader-dot-dark {
+    background: #9b9b9b;
+}
+
+/* Animation frames for pulsating dots */
+@keyframes LoadingButton-scale-dot {
+    0% {
+        transform: scale(.5);
+    }
+    25% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(.5);
+    }
+    100% {
+        transform: scale(.5);
+    }
+}

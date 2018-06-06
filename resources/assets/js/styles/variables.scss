@@ -1,0 +1,40 @@
+@import "../styles/colors.scss";
+
+$blue_100: #f9f9f9;
+$blue_150: #d2e3f8;
+$blue_200: #468ee5;
+$blue_300: #0071ce;
+$blue_400_6: rgba(0, 113, 207, .6);
+$grey_100: #f7f7f7;
+$grey_150: #ececec;
+$grey_175: #ccc;
+$grey_200: #bab7b7;
+$grey_300: #a2a2a2;
+$grey_400: #9b9b9b;
+$grey_600: #868686;
+$grey_700: #6d6565;
+$grey_800: #4a4a4a;
+$grey_900: #404040;
+/* stylelint-disable number-max-precision */
+$black_075: rgba(0, 0, 0, .075);
+/* stylelint-enable number-max-precision */
+$orange_100: #faa635;
+$orange_200: #df860e;
+$red_100: #fdf1f0;
+$red_200: #d46258;
+
+$error_highlight_red: rgba(211, 97, 88, .3);
+
+/* font weights */
+$weight_light: 300;
+$weight_book: 400;
+$weight_bold: 500;
+$weight_extra_bold: 700;
+
+/* font sizes */
+$text_xs: 1.2rem;
+$text_medium: 1.8rem;
+$text_large: 2.8rem;
+
+/* ORCHARD ALW COLOR PALETTE */
+$mouse: #f2f2f2;

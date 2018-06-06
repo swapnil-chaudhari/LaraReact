@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+@import "../../styles/grid";
+
+.FormField {
+    &-note {
+        color: #bab7b6;
+        font-size: 13px;
+        font-style: italic;
+        margin-top: 10px;
+    }
+    &-required {
+        margin-left: 6px;
+    }
+    &-errorMessage {
+        display: block;
+    }
+    &-labelWrapper::after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+    &-labelAppendix {
+        float: right;
+    }
+}
+
+.FormField-group-has-error {
+    color: $red_200;
+    position: relative;
+    .FormField-form-control,
+    .Select-control {
+        border-color: $red_200;
+    }
+    .DateField-form-control {
+        border-color: $red_200;
+    }
+    .FormField-label,
+    .Select-placeholder {
+        color: $red_200;
+    }
+    &::before {
+        background-color: $error_highlight_red;
+        content: "";
+        display: inline-block;
+        height: 100%;
+        left: -$grid_gutter_width;
+        position: absolute;
+        width: 6px;
+    }
+}
