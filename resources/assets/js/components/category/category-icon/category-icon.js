@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FormField from '../../../package/form-field/form-field';
+import ImageUpload from '../../../package/image-upload/image-upload';
 import * as AppPropTypes from '../../../prop-types';
 import { intlShape, intl } from 'react-intl';
 import wrapFormatMessage from '../../../utils/wrap-format-message';
@@ -29,13 +30,10 @@ const CategoryIcon = ({
             label={ formatMessage(fieldMessages.categoryIcon.label) }
             id="category-icon-input"
         >
-
-        <input
-            type="file"
-            className="form-control"
-            onChange={ onChange }
-            placeholder={ formatMessage(fieldMessages.categoryIcon.placeholder) }
-        />
+            <ImageUpload
+                categoryIcon={ categoryIcon }
+                onChange={ onChange }
+            />
         </FormField>
     );
 };

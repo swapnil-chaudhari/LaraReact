@@ -6,6 +6,7 @@ import { deleteConfirmationMessages } from './i18n';
 import { opened } from '../../actions/category-modal';
 import { categoryUpdated } from '../../actions/save-category';
 import isEmpty from 'lodash.isempty';
+import Pagination from '../../package/pagination/pagination';
 
 class Categories extends Component {
     static propTypes = {
@@ -17,7 +18,8 @@ class Categories extends Component {
     state = {
         categoryToDelete: 0,
         showConfirmationModal: false,
-        deleteCategoryInProgress: false
+        deleteCategoryInProgress: false,
+        pageOfItems: []
     }
 
     handleCancelDeleteCategory = () => {
@@ -44,6 +46,9 @@ class Categories extends Component {
         dispatch(opened());
     }
 
+    onChangePage = pageOfItems =>
+        this.setState({ pageOfItems });
+
     render() {
         const {
             header,
@@ -52,7 +57,8 @@ class Categories extends Component {
         } = this.props;
         const {
             showConfirmationModal,
-            deleteCategoryInProgress
+            deleteCategoryInProgress,
+            pageOfItems
          } = this.state;
 
         return (
@@ -73,31 +79,38 @@ class Categories extends Component {
                                 typeof rows.error != "undefined" || rows.error != null
                                 ?
                                     <tr>
-                                        <td colSpan={4}>{ rows.error }.</td>
+                                        <td colSpan={5}>{ rows.error }.</td>
                                     </tr>
                                     :
-                                    rows.map((row, index) =>
+                                    pageOfItems.map((row, index) =>
                                         <tr
                                             key={ row.id }
                                         >
                                             <td key= { row.id }>{ row.id }</td>
                                             <td key= { row.categoryTitle }>{ row.categoryTitle }</td>
                                             <td key= { row.categoryDescription }>{ row.categoryDescription }</td>
+                                            <td key= { row.categoryIcon }>
+                                                <img
+                                                    width="50"
+                                                    height="50"
+                                                    src={"icons/" + row.categoryIcon}
+                                                />
+                                            </td>
                                             <td>
                                                 <a
                                                     href="javascript:void(0)"
                                                     className="btn btn-warning btn-formatter btn-sm btn-actions glyphicon glyphicon-pencil btn-icon"
                                                     onClick={ this.handleUpdateCategory.bind(this, row) }
+                                                    title="EDIT"
                                                 >
-                                                    <span>EDIT</span>
                                                 </a>
 
                                                 <a
                                                     href="javascript:void(0)"
                                                     className="btn btn-danger btn-formatter btn-sm btn-actions glyphicon glyphicon-trash btn-icon"
                                                     onClick={ this.handleDeleteCategoryConfirm.bind(this, row.id) }
+                                                    title="DELETE"
                                                 >
-                                                    <span>DELETE</span>
                                                 </a>
                                             </td>
 
@@ -106,6 +119,12 @@ class Categories extends Component {
                             }
                         </tbody>
                     </table>
+                    {
+                        !rows.error
+                        ?
+                            <Pagination items={rows} onChangePage={this.onChangePage} />
+                        : ''
+                    }
                    { showConfirmationModal &&
                         <DeleteConfirmationModal
                             isOpen={ showConfirmationModal }

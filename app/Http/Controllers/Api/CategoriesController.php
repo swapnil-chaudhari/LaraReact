@@ -9,7 +9,7 @@ class CategoriesController extends Controller
 {
     public function index(Request $request)
     {
-        $results = Categories::all('id', 'categoryTitle', 'categoryDescription')->toArray();
+        $results = Categories::all('id', 'categoryTitle', 'categoryDescription', 'categoryIcon')->toArray();
 
         if (!$results){
 
@@ -27,19 +27,23 @@ class CategoriesController extends Controller
 
     public function store(Request $request)
     {
-        $imageName = time().'.'.$request->categoryIcon->getClientOriginalExtension();
-
         $categories = new Categories;
 
         $categories->categoryTitle = $request->categoryTitle;
 
         $categories->categoryDescription = $request->categoryDescription;
 
-        $categories->categoryIcon = $imageName;
+        if ($request->categoryIcon) {
+            $imageName = time().'.'.$request->categoryIcon->getClientOriginalExtension();
+            $categories->categoryIcon = $imageName;
+
+            $request->categoryIcon->move(
+                public_path('icons'),
+                $imageName
+            );
+        }
 
         $categories->save();
-
-        $request->categoryIcon->move(public_path('icons'), $imageName);
 
         return response()->json([
             'results' => 'Category is added successfully.'
@@ -49,20 +53,22 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $imageName = time().'.'.$request->categoryIcon->getClientOriginalExtension();
+            $categoryToUpdate = [
+                'categoryTitle' => $request->categoryTitle,
+                'categoryDescription' => $request->categoryDescription,
+            ];
 
-            Categories::find($id)->update(
-                [
-                    'categoryTitle' => $request->categoryTitle,
-                    'categoryDescription' => $request->categoryDescription,
-                    'categoryIcon' => $imageName
-                ]
-            );
+            if ($request->categoryIcon) {
+                $imageName = time().'.'.$request->categoryIcon->getClientOriginalExtension();
+                $categoryToUpdate['categoryIcon'] = $imageName;
 
-            $request->categoryIcon->move(
-                public_path('icons'),
-                $imageName
-            );
+                $request->categoryIcon->move(
+                    public_path('icons'),
+                    $imageName
+                );
+            }
+
+            Categories::find($id)->update($categoryToUpdate);
 
             return response()->json([
               'results'  =>  'Category is updated successfully.'

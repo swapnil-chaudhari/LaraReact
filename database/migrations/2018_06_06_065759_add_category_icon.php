@@ -14,7 +14,7 @@ class AddCategoryIcon extends Migration
     public function up()
     {
         Schema::table('categories', function($table) {
-            $table->text('categoryIcon')->after('categoryDescription');
+            $table->text('categoryIcon')->default(NULL)->after('categoryDescription');
         });
     }
 

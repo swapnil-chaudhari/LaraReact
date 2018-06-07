@@ -29,6 +29,9 @@ class CategoryModal extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            imagePreviewUrl: ''
+        };
     }
 
     handleSaveCategory = () => {
@@ -36,12 +39,21 @@ class CategoryModal extends Component {
         return dispatch(validateAndSaveCategory());
     };
 
-    handleFieldChange(field, event) {
+    handleFieldChange = (field, event) => {
         const { dispatch } = this.props;
 
         let fieldValue = event.target.value;
         if (event.target.files) {
             fieldValue = event.target.files[0];
+
+            let reader = new FileReader();
+            reader.onloadend = () => {
+                this.setState({
+                    imagePreviewUrl: reader.result
+                });
+            }
+
+            reader.readAsDataURL(fieldValue)
         }
         return dispatch(updateCategoryField(field, fieldValue));
     }
@@ -51,6 +63,10 @@ class CategoryModal extends Component {
         dispatch(clearCategoryState());
         dispatch(clearCategoryEditor());
         dispatch(reset());
+
+        this.setState({
+            imagePreviewUrl: ''
+        });
     }
 
     render() {
@@ -72,6 +88,15 @@ class CategoryModal extends Component {
             categoryDescription = '',
             categoryIcon = '',
         } = categoryDetails;
+
+        const {imagePreviewUrl} = this.state;
+
+        console.log('state ', this.state);
+
+        let imagePreview = null;
+        if (imagePreviewUrl) {
+            imagePreview = (<img className="imagePreview" src={imagePreviewUrl} />);
+        }
 
         return (
             <Modal
@@ -100,10 +125,11 @@ class CategoryModal extends Component {
                                 errorMessage={ errorMessages.categoryDescription }
                             />
                             <CategoryIcon
-                                categoryIcon = { categoryIcon.name }
+                                categoryIcon = { categoryIcon ? categoryIcon.name : '' }
                                 onChange ={ this.handleFieldChange.bind(this, 'categoryIcon') }
                                 errorMessage={ errorMessages.categoryIcon }
                             />
+                            { imagePreview }
                         </form>
                         <div className="DeleteConfirmationModal-button-wrapper">
                             <Button

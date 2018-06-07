@@ -2,6 +2,7 @@ export const RECENT_CATEGORIES_HEADER = [
     'CATEGORY ID',
     'CATEGORY NAME',
     'CATEGORY DESCRIPTION',
+    'CATEGORY ICON',
     'ACTION'
 ];
 
