@@ -1,4 +1,4 @@
-<p align="center">#LaraReact#</p>
+<p align="center"><h1>LaraReact</h1></p>
 
 ## Laravel 5.6 and React 16 boilerplate
 
