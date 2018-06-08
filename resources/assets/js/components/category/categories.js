@@ -99,7 +99,15 @@ class Categories extends Component {
                                             <td>
                                                 <a
                                                     href="javascript:void(0)"
-                                                    className="btn btn-warning btn-formatter btn-sm btn-actions glyphicon glyphicon-pencil btn-icon"
+                                                    className="btn btn-purple btn-formatter btn-xs btn-actions glyphicon glyphicon-eye-open btn-icon"
+                                                    onClick={ this.handleUpdateCategory.bind(this, row) }
+                                                    title="VIEW"
+                                                >
+                                                </a>
+
+                                                <a
+                                                    href="javascript:void(0)"
+                                                    className="btn btn-warning btn-formatter btn-xs btn-actions glyphicon glyphicon-pencil btn-icon"
                                                     onClick={ this.handleUpdateCategory.bind(this, row) }
                                                     title="EDIT"
                                                 >
@@ -107,7 +115,7 @@ class Categories extends Component {
 
                                                 <a
                                                     href="javascript:void(0)"
-                                                    className="btn btn-danger btn-formatter btn-sm btn-actions glyphicon glyphicon-trash btn-icon"
+                                                    className="btn btn-danger btn-formatter btn-xs btn-actions glyphicon glyphicon-trash btn-icon"
                                                     onClick={ this.handleDeleteCategoryConfirm.bind(this, row.id) }
                                                     title="DELETE"
                                                 >

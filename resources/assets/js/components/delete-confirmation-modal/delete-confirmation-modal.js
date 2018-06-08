@@ -28,7 +28,7 @@ const DeleteConfirmationModal =
                     <div className="DeleteConfirmationModal-button-wrapper">
                         <Button
                             type="button"
-                            className="DeleteConfirmationModal-button btn btn-info"
+                            className="btn btn-info"
                             id="cancel-submit"
                             onClick={ onCancel }
                         >
@@ -42,7 +42,7 @@ const DeleteConfirmationModal =
                             id="confirm-submit"
                             onClick={ onConfirmation }
                             isLoading={ deleteInProgress || false }
-                            defaultStyle
+                            dangerStyle
                         >
                             <span className="LoadingButton-hide">
                                 <FormattedMessage

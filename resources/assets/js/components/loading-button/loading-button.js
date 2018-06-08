@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-const LoadingButton = ({ children, isLoading, onClick, type, dangerStyle, defaultStyle, disabled }) => {
+const LoadingButton = ({ children, isLoading, onClick, type, dangerStyle, defaultStyle, disabled, classes }) => {
     const classNames = cx(
         'LoadingButton',
         'btn',
-        { 'btn-info': !dangerStyle && !defaultStyle },
+        { 'btn-save': classes },
+        { 'btn-success': !dangerStyle && !defaultStyle },
         { 'LoadingButton-loading': isLoading },
         { 'btn-danger': defaultStyle }
     );
