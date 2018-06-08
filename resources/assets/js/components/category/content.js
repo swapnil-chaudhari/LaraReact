@@ -72,9 +72,9 @@ class Content extends Component {
                         {
                             loadingState
                             ?
-                            <div className="box-body-loader">
-                                <LoadingIndicator />
-                            </div>
+                                <div className="box-body-loader">
+                                    <LoadingIndicator />
+                                </div>
                             :
                                 <Categories
                                     header={ headers }

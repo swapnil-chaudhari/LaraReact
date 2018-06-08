@@ -94,4 +94,13 @@ class CategoriesController extends Controller
         }
     }
 
+    public function fetchCategoriesCount()
+    {
+        $results = Categories::count();
+
+        return response()->json([
+              'results'  => $results
+            ]);
+    }
+
 }

@@ -15,7 +15,6 @@ let { store, persistor } = configureStore()
 
 
 const App = () => {
-    // const store = createNewStore();
     let { store, persistor } = configureStore()
     return (
     <Provider store={ store }>

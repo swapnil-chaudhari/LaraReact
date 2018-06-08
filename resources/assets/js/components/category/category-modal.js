@@ -91,8 +91,6 @@ class CategoryModal extends Component {
 
         const {imagePreviewUrl} = this.state;
 
-        console.log('state ', this.state);
-
         let imagePreview = null;
         if (imagePreviewUrl) {
             imagePreview = (<img className="imagePreview" src={imagePreviewUrl} />);
