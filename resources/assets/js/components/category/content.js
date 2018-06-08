@@ -57,7 +57,7 @@ class Content extends Component {
 
                         <Button
                             type="button"
-                            className="btn btn-primary btn-sm pull-right btn-single"
+                            className="btn btn-info btn-sm pull-right btn-single"
                             id="cancel-submit"
                             onClick={ () => dispatch(opened()) }
                         >

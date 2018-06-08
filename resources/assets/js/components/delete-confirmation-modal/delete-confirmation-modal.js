@@ -28,7 +28,7 @@ const DeleteConfirmationModal =
                     <div className="DeleteConfirmationModal-button-wrapper">
                         <Button
                             type="button"
-                            className="DeleteConfirmationModal-button"
+                            className="DeleteConfirmationModal-button btn btn-info"
                             id="cancel-submit"
                             onClick={ onCancel }
                         >
