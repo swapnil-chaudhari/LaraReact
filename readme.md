@@ -1,4 +1,4 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center">#LaraReact#</p>
 
 ## Laravel 5.6 and React 16 boilerplate
 
@@ -59,24 +59,6 @@ or if you would like to compile assets on runtime then copy paste following comm
 
 `npm run watch` or `npm run watch-poll`
 
-
-for complete list of instruction follow the link below
-[Laravel Mix](https://laravel.com/docs/5.4/mix#running-mix)
-
-
-TODO:
-
-- [x] Add Redux
-- [x] Add Passport for authentication
-- [x] User Login
-- [x] User Register
-- [x] Users Crud
-- [x] Articles Crud
-- [x] Form validation Client and Server
-- [ ] Reset Password
-- [x] Tests
-- [x] Upgrade to Laravel 5.6
-- [x] Upgrade to React 16
 
 
 
