@@ -17,7 +17,7 @@ export default class ImageUpload extends Component {
 
                 <Button
                     type="button"
-                    className="btn btn-success"
+                    className="btn btn-primary"
                     id="image-upload-button"
                     onClick={ () => { this.refs.fileUpload.click() } }
                 >

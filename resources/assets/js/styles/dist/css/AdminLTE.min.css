@@ -4359,3 +4359,18 @@ table.text-center,table.text-center td,table.text-center th{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+.btn-purple{
+    background-color:#605ca8 !important;
+    border-color:#605ca8;
+    color: white;
+}
+
+.btn-purple:hover,.btn-purple:active,.btn-purple:focus,.btn-purple.hover{
+    color: white;
+    background-color: red
+}
+
+.btn-save, .btn-cancel {
+    float: right;
+}

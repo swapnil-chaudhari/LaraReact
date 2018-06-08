@@ -91,6 +91,8 @@ class CategoryModal extends Component {
             categoryIcon = '',
         } = categoryDetails;
 
+        console.log(categoryDetails);
+
         const {imagePreviewUrl} = this.state;
 
         let imagePreview = null;
@@ -107,7 +109,7 @@ class CategoryModal extends Component {
                 <article className="DeleteConfirmationModal-container modal-content">
                     <header className="DeleteConfirmationModal-header modal-header">
                         <h4 className="DeleteConfirmationModal-heading">
-                                { !isEmpty(categoryDetails.id) ? 'Edit' : 'Add' } Category
+                                { categoryDetails.id ? 'Edit' : 'Add' } Category
                         </h4>
                         <button onClick={ this.handleModalReset.bind(this) } type="button" className="close" data-dismiss="modal">&times;</button>
                     </header>
@@ -134,7 +136,7 @@ class CategoryModal extends Component {
                         <div className="DeleteConfirmationModal-button-wrapper">
                             <Button
                                 type="button"
-                                className="btn btn-info"
+                                className="btn btn-info btn-cancel"
                                 id="cancel-submit"
                                 onClick={ this.handleModalReset.bind(this) }
                             >
@@ -147,11 +149,12 @@ class CategoryModal extends Component {
                                 type="button"
                                 id="confirm-submit"
                                 onClick={ this.handleSaveCategory.bind(this) }
+                                classes
                             >
                                 <span className="LoadingButton-hide">
                                     <FormattedMessage
                                         id="delete-modal.delete"
-                                        defaultMessage='SAVE'
+                                        defaultMessage={ categoryDetails.id ? 'UPDATE' : 'SAVE' }
                                     />
                                 </span>
                             </LoadingButton>
