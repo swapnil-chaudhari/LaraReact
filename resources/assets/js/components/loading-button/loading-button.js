@@ -6,10 +6,9 @@ const LoadingButton = ({ children, isLoading, onClick, type, dangerStyle, defaul
     const classNames = cx(
         'LoadingButton',
         'btn',
-        { 'btn-primary': !dangerStyle && !defaultStyle },
+        { 'btn-info': !dangerStyle && !defaultStyle },
         { 'LoadingButton-loading': isLoading },
-        { 'btn-danger': dangerStyle },
-        { 'btn-default': defaultStyle }
+        { 'btn-danger': defaultStyle }
     );
 
     const loadingDotClassNames = cx(

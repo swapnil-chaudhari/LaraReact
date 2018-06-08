@@ -39,7 +39,7 @@ class Content extends Component {
                                                 <p>Categories</p>
                                             </div>
                                             <div className="icon">
-                                                <i className="ion ion-bag"></i>
+                                                <i className="fa fa-tags"></i>
                                             </div>
                                             <a href="#categories" className="small-box-footer">More info <i className="fa fa-arrow-circle-right"></i></a>
                                         </div>

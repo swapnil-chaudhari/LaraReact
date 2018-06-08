@@ -35,6 +35,7 @@ class CategoryModal extends Component {
     }
 
     handleSaveCategory = () => {
+        this.hideImagePreview();
         const { dispatch } = this.props;
         return dispatch(validateAndSaveCategory());
     };
@@ -63,17 +64,18 @@ class CategoryModal extends Component {
         dispatch(clearCategoryState());
         dispatch(clearCategoryEditor());
         dispatch(reset());
+        this.hideImagePreview();
+    }
 
+    hideImagePreview = () =>
         this.setState({
             imagePreviewUrl: ''
         });
-    }
 
     render() {
         const {
             categoryEditor = {},
             isOpen,
-            dispatch,
             category
         } = this.props;
         const { fieldErrors, categoryEdits } = categoryEditor;
@@ -132,7 +134,7 @@ class CategoryModal extends Component {
                         <div className="DeleteConfirmationModal-button-wrapper">
                             <Button
                                 type="button"
-                                className="DeleteConfirmationModal-button"
+                                className="btn btn-info"
                                 id="cancel-submit"
                                 onClick={ this.handleModalReset.bind(this) }
                             >
