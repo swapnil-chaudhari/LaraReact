@@ -26,6 +26,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::group(['middleware' => 'auth:api'], function() {
     Route::resource('categories', 'CategoriesController');
+
     Route::get('getLoggedInUser', function(){
         $user = Auth::user();
         return response()->json([
@@ -34,4 +35,6 @@ Route::group(['middleware' => 'auth:api'], function() {
               ]
             ]);
     });
+
+    Route::get('/categoriesCount', 'CategoriesController@fetchCategoriesCount');
 });
