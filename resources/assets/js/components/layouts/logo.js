@@ -15,8 +15,8 @@ class Logo extends Component {
         return(
             <header className="main-header">
                 <a href="../../index2.html" className="logo">
-                  <span className="logo-mini"><b>LR</b></span>
-                  <span className="logo-lg"><b>LaraReact</b> Boilerplate</span>
+                    <span className="logo-mini"><b>LR</b></span>
+                    <span className="logo-lg"><b>LaraReact</b> Boilerplate</span>
                 </a>
                 <nav className="navbar navbar-static-top">
                   <a href="#" className="sidebar-toggle" data-toggle="push-menu" role="button">
