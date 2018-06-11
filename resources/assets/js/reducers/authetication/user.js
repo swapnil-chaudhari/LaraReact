@@ -1,4 +1,4 @@
-import { USER_FETCHED, USER_FETCHED_FAILURE } from '../../action-types';
+import { USER_FETCHED, USER_FETCHED_FAILURE } from 'js/action-types';
 
 const initialState = {};
 

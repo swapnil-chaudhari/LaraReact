@@ -6,11 +6,11 @@ import {
 import { reset } from './category-modal';
 import { clearCategoryState } from './clear-category-state';
 import getCategories from './get-categories';
-import categorySchema from '../actions/data/category-schema.json';
-import { toCamel } from '../utils/object-keys';
-import { getErrors } from '../utils/error-handling';
+import categorySchema from './data/category-schema.json';
+import { toCamel } from 'js/utils/object-keys';
+import { getErrors } from 'js/utils/error-handling';
 import omit from 'lodash.omit';
-import { ERROR_CODES } from '../constants';
+import { ERROR_CODES } from 'js/constants';
 import { enableLoadingState } from './loading-state';
 
 export const validateAndSaveCategory = () => (dispatch, getState) => {

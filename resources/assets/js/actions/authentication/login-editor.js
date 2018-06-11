@@ -2,7 +2,7 @@ import {
     CLEAR_LOGIN_EDITOR,
     LOGIN_FIELD_UPDATED,
     LOGIN_ERROR
-} from '../../action-types';
+} from 'js/action-types';
 
 export const clearLoginEditor = () => ({ type: CLEAR_LOGIN_EDITOR });
 

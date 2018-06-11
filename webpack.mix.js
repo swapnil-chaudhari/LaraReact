@@ -17,7 +17,7 @@ mix.webpackConfig({
   },
   resolve: {
     alias : {
-      '@': path.resolve(__dirname, 'resources/assets/js'),
+      'js': path.resolve(__dirname, 'resources/assets/js'),
       'public': path.resolve(__dirname, 'public'),
       'node': path.resolve(__dirname, 'node'),
     },

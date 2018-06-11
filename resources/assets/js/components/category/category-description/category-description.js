@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FormField from '../../../package/form-field/form-field';
-import * as AppPropTypes from '../../../prop-types';
+import FormField from 'js/package/form-field/form-field';
+import * as AppPropTypes from 'js/prop-types';
 import { intlShape, intl } from 'react-intl';
-import wrapFormatMessage from '../../../utils/wrap-format-message';
+import wrapFormatMessage from 'js/utils/wrap-format-message';
 import { fieldMessages } from './i18n';
 
 

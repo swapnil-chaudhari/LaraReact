@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { deleteCategory } from '../../actions/delete-category';
+import { deleteCategory } from 'js/actions/category/delete-category';
 import DeleteConfirmationModal from '../delete-confirmation-modal/delete-confirmation-modal';
 import { deleteConfirmationMessages } from './i18n';
-import { opened } from '../../actions/category-modal';
-import { categoryUpdated } from '../../actions/save-category';
+import { opened } from 'js/actions/category/category-modal';
+import { categoryUpdated } from 'js/actions/category/save-category';
 import isEmpty from 'lodash.isempty';
-import Pagination from '../../package/pagination/pagination';
+import Pagination from 'js/package/pagination/pagination';
 
 class Categories extends Component {
     static propTypes = {

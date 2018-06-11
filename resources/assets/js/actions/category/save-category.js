@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { CATEGORY_UPDATED } from '../action-types';
-import { APP_ENDPOINT } from '../constants';
-import { getToken } from '../actions/authentication/auth.js';
-import { categories } from '../services/urls/index.js';
+import { CATEGORY_UPDATED } from 'js/action-types';
+import { APP_ENDPOINT } from 'js/constants';
+import { getToken } from 'js/actions/authentication/auth.js';
+import { categories } from 'js/services/urls/index.js';
 
 export const categoryUpdated = category => ({
     type: CATEGORY_UPDATED,

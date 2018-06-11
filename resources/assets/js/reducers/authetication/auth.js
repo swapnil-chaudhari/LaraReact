@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, TOKEN_EXPIRED } from '../../action-types';
+import { LOGIN_SUCCESS, TOKEN_EXPIRED } from 'js/action-types';
 
 const initialState = {
     access_token: '',

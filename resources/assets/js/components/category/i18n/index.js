@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import errorMessages from '../../../i18n/errors.js';
+import errorMessages from 'js/i18n/errors.js';
 
 export const deleteConfirmationMessages = defineMessages({
     header: {
