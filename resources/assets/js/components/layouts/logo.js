@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { hashHistory } from 'react-router';
 import { connect } from 'react-redux';
-import { isAuthenticated } from '../../actions/authentication/auth.js';
+import { isAuthenticated } from 'js/actions/authentication/auth.js';
 
 class Logo extends Component {
     componentWillMount() {

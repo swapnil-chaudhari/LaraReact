@@ -1,4 +1,4 @@
-import { CATEGORY_ADD_MODAL_OPENED, CATEGORY_ADD_MODAL_RESET } from '../action-types';
+import { CATEGORY_ADD_MODAL_OPENED, CATEGORY_ADD_MODAL_RESET } from 'js/action-types';
 
 const initialState = {
     isOpen: false,

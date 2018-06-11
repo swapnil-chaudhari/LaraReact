@@ -3,7 +3,7 @@ import {
     CATEGORY_UPDATED,
     CATEGORIES_COUNT_FETCHED,
     CATEGORY_STATE_CLEARED
-} from '../action-types';
+} from 'js/action-types';
 
 const initialState = {};
 

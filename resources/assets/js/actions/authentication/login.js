@@ -4,8 +4,8 @@ import {
     CLIENT_ID,
     CLIENT_SECRET,
     GRANT_TYPE
-} from '../../constants';
-import { LOGIN_SUCCESS } from '../../action-types.js'
+} from 'js/constants';
+import { LOGIN_SUCCESS } from 'js/action-types.js'
 import { setToken } from './auth.js';
 
 const checkLogin = loginData => {

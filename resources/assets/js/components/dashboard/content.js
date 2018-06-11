@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getCategoriesCount } from '../../actions/get-categories';
-import LoadingIndicator from '../../package/loading-indicator/loading-indicator';
+import { getCategoriesCount } from 'js/actions/category/get-categories';
+import LoadingIndicator from 'js/package/loading-indicator/loading-indicator';
 
 class Content extends Component {
     componentWillMount() {

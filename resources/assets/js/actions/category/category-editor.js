@@ -2,7 +2,7 @@ import {
     CLEAR_CATEGORY_EDITOR,
     CATEGORY_FIELD_UPDATED,
     CATEGORY_SAVE_ERROR
-} from '../action-types';
+} from 'js/action-types';
 
 export const clearCategoryEditor = () => ({ type: CLEAR_CATEGORY_EDITOR });
 

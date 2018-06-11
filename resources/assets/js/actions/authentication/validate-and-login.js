@@ -1,15 +1,15 @@
-import { login } from '../../actions/authentication/login';
+import { login } from 'js/actions/authentication/login';
 import {
     clearLoginEditor,
     loginError,
-} from '../../actions/authentication/login-editor';
-import loginSchema from '../../actions/authentication/data/login-schema.json';
-import { toCamel } from '../../utils/object-keys';
-import { getErrors } from '../../utils/error-handling';
+} from 'js/actions/authentication/login-editor';
+import loginSchema from 'js/actions/authentication/data/login-schema.json';
+import { toCamel } from 'js/utils/object-keys';
+import { getErrors } from 'js/utils/error-handling';
 import omit from 'lodash.omit';
-import { ERROR_CODES } from '../../constants';
-import { enableLoadingState } from '../../actions/loading-state';
-import { dashboard } from '../../services/urls/index.js';
+import { ERROR_CODES } from 'js/constants';
+import { enableLoadingState } from 'js/actions/category/loading-state';
+import { dashboard } from 'js/services/urls/index.js';
 import { hashHistory } from 'react-router';
 
 export const validateAndLogin = () => (dispatch, getState) => {

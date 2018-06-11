@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import getCategories from '../../actions/get-categories';
-import { opened } from '../../actions/category-modal';
+import getCategories from 'js/actions/category/get-categories';
+import { opened } from 'js/actions/category/category-modal';
 import { connect } from 'react-redux';
 import Categories from './categories';
 import CategoryModal from './category-modal';
-import { RECENT_CATEGORIES_HEADER } from '../../constants';
-import LoadingIndicator from '../../package/loading-indicator/loading-indicator';
+import { RECENT_CATEGORIES_HEADER } from 'js/constants';
+import LoadingIndicator from 'js/package/loading-indicator/loading-indicator';
 import { intlShape, FormattedMessage } from 'react-intl';
-import Button from '../../package/button/button';
+import Button from 'js/package/button/button';
 
 class Content extends Component {
     static propTypes = {

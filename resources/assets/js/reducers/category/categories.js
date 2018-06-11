@@ -1,4 +1,4 @@
-import { CATEGORIES_FETCHED, CATEGORIES_FETCHED_FAILURE } from '../action-types';
+import { CATEGORIES_FETCHED, CATEGORIES_FETCHED_FAILURE } from 'js/action-types';
 
 const initialState = [];
 

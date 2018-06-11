@@ -4,10 +4,10 @@ import {
     CATEGORIES_FETCHED,
     CATEGORIES_FETCHED_FAILURE,
     CATEGORIES_COUNT_FETCHED,
-} from '../action-types';
-import { APP_ENDPOINT } from '../constants';
-import { getToken } from '../actions/authentication/auth.js';
-import { categories, categoriesCount } from '../services/urls/index.js';
+} from 'js/action-types';
+import { APP_ENDPOINT } from 'js/constants';
+import { getToken } from 'js/actions/authentication/auth.js';
+import { categories, categoriesCount } from 'js/services/urls/index.js';
 
 // export const headers = {
 //     headers: {

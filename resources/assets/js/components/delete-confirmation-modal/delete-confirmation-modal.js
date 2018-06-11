@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import Modal from '../../components/modal/modal';
-import LoadingButton from '../../components/loading-button/loading-button';
-import Button from '../../package/button/button';
-import Close from '../../package/icons/close';
+import Modal from 'js/components/modal/modal';
+import LoadingButton from 'js/components/loading-button/loading-button';
+import Button from 'js/package/button/button';
+import Close from 'js/package/icons/close';
 
 /* eslint-disable max-len */
 const DeleteConfirmationModal =

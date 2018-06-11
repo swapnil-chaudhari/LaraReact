@@ -5,7 +5,7 @@ import Category from './components/category/category';
 import Demo from './components/demo/demo';
 import Dashboard from './components/dashboard/dashboard';
 import Login from './components/authentication/login';
-import { enableLoadingState } from './actions/loading-state';
+import { enableLoadingState } from './actions/category/loading-state';
 
 const Routes = ({ dispatch, history }) => (
         <Router history={ history }>

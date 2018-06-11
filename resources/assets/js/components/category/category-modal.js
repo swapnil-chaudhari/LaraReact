@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Modal from '../../components/modal/modal';
-import { updateCategoryField, clearCategoryEditor } from '../../actions/category-editor';
-import { validateAndSaveCategory } from '../../actions/validate-and-save-category';
-import { reset } from '../../actions/category-modal';
-import { clearCategoryState } from '../../actions/clear-category-state';
+import Modal from 'js/components/modal/modal';
+import { updateCategoryField, clearCategoryEditor } from 'js/actions/category/category-editor';
+import { validateAndSaveCategory } from 'js/actions/category/validate-and-save-category';
+import { reset } from 'js/actions/category/category-modal';
+import { clearCategoryState } from 'js/actions/category/clear-category-state';
 import { connect } from 'react-redux';
 import CategoryTitle from './category-title/category-title.js';
 import CategoryDescription from './category-description/category-description.js';
 import CategoryIcon from './category-icon/category-icon.js';
 import isEmpty from 'lodash.isempty';
-import LoadingButton from '../../components/loading-button/loading-button';
+import LoadingButton from 'js/components/loading-button/loading-button';
 import { intlShape, FormattedMessage } from 'react-intl';
-import Button from '../../package/button/button';
-import Close from '../../package/icons/close';
+import Button from 'js/package/button/button';
+import Close from 'js/package/icons/close';
 import { fieldErrorMessages } from './i18n';
-import { getMessagesForErrors } from '../../utils/error-handling';
+import { getMessagesForErrors } from 'js/utils/error-handling';
 
 
 

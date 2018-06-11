@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { TOKEN_EXPIRED } from '../../action-types.js'
+import { TOKEN_EXPIRED } from 'js/action-types.js'
 
 export const  setAuthorizationToken = (token) => {
     if (token) {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getLoggedInUser } from '../../actions/authentication//user.js';
-import { setAuthorizationToken, isValidToken, tokenExpired } from '../../actions/authentication/auth.js';
+import { getLoggedInUser } from 'js/actions/authentication//user.js';
+import { setAuthorizationToken, isValidToken, tokenExpired } from 'js/actions/authentication/auth.js';
 import { hashHistory } from 'react-router';
 
 class SideBar extends Component {
