@@ -26,12 +26,14 @@ export const validateAndSaveCategory = () => (dispatch, getState) => {
     };
 
     let categoryToValidate = omit(categoryToSave, [
-        'id'
+        'id',
+        'action'
     ]);
     let schema;
     schema = toCamel(categorySchema);
 
     const errors = getErrors(categoryToValidate, schema);
+
 
     if (errors) {
         return dispatch(

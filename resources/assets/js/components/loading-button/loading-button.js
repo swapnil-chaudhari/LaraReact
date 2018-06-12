@@ -9,7 +9,7 @@ const LoadingButton = ({ children, isLoading, onClick, type, dangerStyle, defaul
         { 'btn-save': classes },
         { 'btn-success': !dangerStyle && !defaultStyle },
         { 'LoadingButton-loading': isLoading },
-        { 'btn-danger': defaultStyle }
+        { 'btn-danger': dangerStyle }
     );
 
     const loadingDotClassNames = cx(

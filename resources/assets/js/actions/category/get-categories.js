@@ -4,6 +4,7 @@ import {
     CATEGORIES_FETCHED,
     CATEGORIES_FETCHED_FAILURE,
     CATEGORIES_COUNT_FETCHED,
+    VIEW_CATEGORY,
 } from 'js/action-types';
 import { APP_ENDPOINT } from 'js/constants';
 import { getToken } from 'js/actions/authentication/auth.js';
@@ -23,6 +24,11 @@ const categoriesFetched = categories => ({
 const categoriesFetchedFailure = error => ({
     type: CATEGORIES_FETCHED_FAILURE,
     payload: error,
+});
+
+export const viewCategory = category => ({
+    type: VIEW_CATEGORY,
+    category,
 });
 
 const categoriesCountFetched = categoriesCount => ({

@@ -91,8 +91,6 @@ class CategoryModal extends Component {
             categoryIcon = '',
         } = categoryDetails;
 
-        console.log(categoryDetails);
-
         const {imagePreviewUrl} = this.state;
 
         let imagePreview = null;
