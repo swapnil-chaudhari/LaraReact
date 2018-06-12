@@ -5,6 +5,7 @@ import { opened } from 'js/actions/category/category-modal';
 import { connect } from 'react-redux';
 import Categories from './categories';
 import CategoryModal from './category-modal';
+import ViewCategoryModal from './view-category-modal';
 import { RECENT_CATEGORIES_HEADER } from 'js/constants';
 import LoadingIndicator from 'js/package/loading-indicator/loading-indicator';
 import { intlShape, FormattedMessage } from 'react-intl';
@@ -54,6 +55,30 @@ class Content extends Component {
                             dispatch= { dispatch }
                             category= { category }
                         />
+
+                        {
+                            category.action === 'view'
+                            ?
+                                <ViewCategoryModal
+                                    isOpen={ category.isOpen }
+                                    dispatch= { dispatch }
+                                    category= { category }
+                                />
+                            :
+                                ''
+                        }
+
+                        {
+                            category.action === 'view'
+                            ?
+                                <ViewCategoryModal
+                                    isOpen={ isOpen }
+                                    dispatch= { dispatch }
+                                    category= { category }
+                                />
+                            :
+                                ''
+                        }
 
                         <Button
                             type="button"

@@ -5,6 +5,7 @@ import DeleteConfirmationModal from '../delete-confirmation-modal/delete-confirm
 import { deleteConfirmationMessages } from './i18n';
 import { opened } from 'js/actions/category/category-modal';
 import { categoryUpdated } from 'js/actions/category/save-category';
+import { viewCategory } from 'js/actions/category/get-categories';
 import isEmpty from 'lodash.isempty';
 import Pagination from 'js/package/pagination/pagination';
 
@@ -44,6 +45,11 @@ class Categories extends Component {
         const { dispatch } = this.props;
         dispatch(categoryUpdated(category));
         dispatch(opened());
+    }
+
+    handleViewCategory = category => {
+        const { dispatch } = this.props;
+        dispatch(viewCategory(category));
     }
 
     onChangePage = pageOfItems =>
@@ -100,7 +106,7 @@ class Categories extends Component {
                                                 <a
                                                     href="javascript:void(0)"
                                                     className="btn btn-purple btn-formatter btn-xs btn-actions glyphicon glyphicon-eye-open btn-icon"
-                                                    onClick={ this.handleUpdateCategory.bind(this, row) }
+                                                    onClick={ this.handleViewCategory.bind(this, row) }
                                                     title="VIEW"
                                                 >
                                                 </a>
